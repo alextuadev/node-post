@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const postRoutes = require("./routes/postRoutes");
-const categoryRoutes = require("./routes/categoryRoutes");
-const userRoutes = require("./routes/userRoutes");
-const tagRoutes = require("./routes/tagRoutes");
+const postRoutes = require("./src/routes/postRoutes");
+const categoryRoutes = require("./src/routes/categoryRoutes");
+const userRoutes = require("./src/routes/userRoutes");
+const tagRoutes = require("./src/routes/tagRoutes");
 
 const app = express();
 const port = process.env.PORT || 3000;
