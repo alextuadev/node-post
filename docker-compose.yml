@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: node-blog
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/alextuadev
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongodatabase
+    image: mongo:latest
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo-data:
